@@ -123,7 +123,7 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _HorizonLineColor: {r: 0.7735849, g: 0.49525535, b: 0.19704513, a: 1}
-    - _SkyGradientBottom: {r: 0.7169812, g: 0.11949679, b: 0.4216168, a: 1}
+    - _SkyGradientBottom: {r: 0.51572317, g: 0.06324901, b: 0.36231145, a: 1}
     - _SkyGradientTop: {r: 0.8553459, g: 0.6525643, b: 0.5245045, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _SunDiscColor: {r: 0.9811321, g: 0.8432495, b: 0.6818559, a: 1}
