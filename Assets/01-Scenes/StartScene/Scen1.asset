@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   active: 1
   shadows:
-    m_OverrideState: 0
-    m_Value: {x: 1, y: 1, z: 1, w: 0}
+    m_OverrideState: 1
+    m_Value: {x: 0.82154185, y: 0.46929848, z: 1, w: -0.1338482}
   midtones:
-    m_OverrideState: 0
-    m_Value: {x: 1, y: 1, z: 1, w: 0}
+    m_OverrideState: 1
+    m_Value: {x: 1, y: 0.94923997, z: 0.85823226, w: -0.07207215}
   highlights:
-    m_OverrideState: 0
-    m_Value: {x: 1, y: 1, z: 1, w: 0}
+    m_OverrideState: 1
+    m_Value: {x: 0.88485813, y: 1, z: 0.7870162, w: 0.023166029}
   shadowsStart:
     m_OverrideState: 0
     m_Value: 0
@@ -30,7 +30,7 @@ MonoBehaviour:
     m_Value: 0.3
   highlightsStart:
     m_OverrideState: 0
-    m_Value: 0.55
+    m_Value: 0.85
   highlightsEnd:
     m_OverrideState: 0
     m_Value: 1
@@ -49,19 +49,19 @@ MonoBehaviour:
   active: 1
   postExposure:
     m_OverrideState: 1
-    m_Value: -0.06
+    m_Value: -0.13
   contrast:
     m_OverrideState: 1
-    m_Value: 4.9
+    m_Value: 29.1
   colorFilter:
     m_OverrideState: 1
     m_Value: {r: 0.9308176, g: 0.7229284, b: 0.67030567, a: 1}
   hueShift:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: -1
   saturation:
     m_OverrideState: 1
-    m_Value: -4.1
+    m_Value: -7.8
 --- !u!114 &-2747689379362933295
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -199,34 +199,34 @@ MonoBehaviour:
   active: 1
   mode:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 2
   gaussianStart:
     m_OverrideState: 1
     m_Value: 10
   gaussianEnd:
     m_OverrideState: 1
-    m_Value: 500
+    m_Value: 176.8
   gaussianMaxRadius:
     m_OverrideState: 1
-    m_Value: 0.91
+    m_Value: 0.5
   highQualitySampling:
     m_OverrideState: 0
     m_Value: 0
   focusDistance:
     m_OverrideState: 1
-    m_Value: 10
+    m_Value: 7.21
   aperture:
-    m_OverrideState: 0
-    m_Value: 5.6
+    m_OverrideState: 1
+    m_Value: 3.1
   focalLength:
-    m_OverrideState: 0
-    m_Value: 50
+    m_OverrideState: 1
+    m_Value: 78
   bladeCount:
     m_OverrideState: 0
-    m_Value: 5
+    m_Value: 4
   bladeCurvature:
     m_OverrideState: 0
     m_Value: 1
   bladeRotation:
     m_OverrideState: 0
-    m_Value: 0
+    m_Value: 180

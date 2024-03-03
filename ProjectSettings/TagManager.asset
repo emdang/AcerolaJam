@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - CinemachineTarget
+  - Terrain
+  - Opening
+  - End
   layers:
   - Default
   - TransparentFX
@@ -15,8 +19,8 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
+  - Portal
+  - PortalInner
   - 
   - 
   - 
