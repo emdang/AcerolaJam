@@ -8,6 +8,8 @@ public class FPSController : MonoBehaviour
 {
 
     [SerializeField] CharacterController controller;
+    [SerializeField] PlayerInput inputs;
+    [SerializeField] InputActionAsset fpsInput;
 
     private Vector2 moveInput;
     [SerializeField] float speed;
@@ -23,7 +25,7 @@ public class FPSController : MonoBehaviour
     [SerializeField] float xSens = 30f;
     [SerializeField] float ySens = 30f;
 
-    bool canMove = true;
+    [SerializeField] bool canMove = true;
     public void OnMove(InputAction.CallbackContext context)
     {
         Debug.Log("Moving" + context.ReadValue<Vector2>());
@@ -32,24 +34,25 @@ public class FPSController : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        Debug.Log("Jumping");
+        //Debug.Log("Jumping");
         Jump();
     }
 
     public void OnLook(InputAction.CallbackContext context)
     {
-        Debug.Log("Looking");
+        //Debug.Log("Looking");
         lookPos = context.ReadValue<Vector2>();
     }
 
     public void OnDisableMovement(InputAction.CallbackContext context)
     {
-        Debug.Log("Pause");
+        //Debug.Log("Pause");
         DisableMovement();
     }
-    public void EnableMovement(InputAction.CallbackContext context)
+    public void OnEnableMovement(InputAction.CallbackContext context)
     {
         Debug.Log("Resume");
+        EnableMovement();
     }
 
 
@@ -110,6 +113,14 @@ public class FPSController : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         
+    }
+
+    public void EnableMovement()
+    {
+        inputs.SwitchCurrentActionMap("Main");
+        canMove = true;
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 }
 

@@ -6,6 +6,7 @@ using UnityEngine.InputSystem;
 public class Shooting : MonoBehaviour
 {
     [SerializeField] GameObject projectile;
+    [SerializeField] Transform launchLocation;
     [SerializeField] float shootVelocity;
     [SerializeField] Camera cam;
     [SerializeField] float coolDown;
