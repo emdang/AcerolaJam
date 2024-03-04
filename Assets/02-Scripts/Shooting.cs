@@ -13,6 +13,7 @@ public class Shooting : MonoBehaviour
     float cooling;
 
     [SerializeField] bool shootEnabled = true;
+    bool paused = false;
     
     // Start is called before the first frame update
     void Start()
@@ -28,7 +29,7 @@ public class Shooting : MonoBehaviour
             cooling -= Time.deltaTime;
     }
 
-    public void OnShoot(InputAction.CallbackContext context)
+    public void OnFire()
     {
         if (!shootEnabled || cooling >0)
             return;
@@ -38,9 +39,18 @@ public class Shooting : MonoBehaviour
         cooling = coolDown;
     }
 
-    public void OnPause(InputAction.CallbackContext context)
+    public void OnPause()
     {
-        DisableShooting();
+        if (!paused)
+        {
+            EnableShooting();
+            paused = false;
+        }
+    }
+
+    public void OnResume()
+    {
+        Debug.Log("Resme Shooting");
     }
 
     public void DisableShooting()

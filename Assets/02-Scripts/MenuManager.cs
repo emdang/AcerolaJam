@@ -15,6 +15,8 @@ public class MenuManager : MonoBehaviour
     [SerializeField] GameObject PauseMenu;
     [SerializeField] GameObject SettingsMenu;
 
+    bool paused = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,18 +32,24 @@ public class MenuManager : MonoBehaviour
         
     }
 
-    public void OpenPause()
+    public void OnPause()
     {
-        PauseMenu.SetActive(true);
-        inputs.SwitchCurrentActionMap("UI");
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        if (!paused)
+        {
+            PauseMenu.SetActive(true);
+            inputs.SwitchCurrentActionMap("UI");
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
     }
-    public void ClosePause()
+    public void OnResume()
     {
+        Debug.Log("Resume menu");
         PauseMenu.SetActive(false);
         SettingsMenu.SetActive(false);
+        inputs.SwitchCurrentActionMap("Main");
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        paused = false;
     }
 }

@@ -26,34 +26,51 @@ public class FPSController : MonoBehaviour
     [SerializeField] float ySens = 30f;
 
     [SerializeField] bool canMove = true;
-    public void OnMove(InputAction.CallbackContext context)
+    bool paused = false;
+    public void OnMove(InputValue value)
     {
-        Debug.Log("Moving" + context.ReadValue<Vector2>());
-        moveInput = context.ReadValue<Vector2>();
+        Debug.Log("Moving" + value);
+        moveInput = value.Get<Vector2>();
     }
 
-    public void OnJump(InputAction.CallbackContext context)
+    public void OnJump()
     {
         //Debug.Log("Jumping");
         Jump();
     }
 
-    public void OnLook(InputAction.CallbackContext context)
+    public void OnLook(InputValue value)
     {
         //Debug.Log("Looking");
-        lookPos = context.ReadValue<Vector2>();
+        lookPos = value.Get<Vector2>();
     }
 
-    public void OnDisableMovement(InputAction.CallbackContext context)
+    public void OnPause()
     {
-        //Debug.Log("Pause");
-        DisableMovement();
+        if (!paused)
+        {
+            canMove = false;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            inputs.SwitchCurrentActionMap("UI");
+            paused = true;
+
+        }
     }
-    public void OnEnableMovement(InputAction.CallbackContext context)
+
+    public void OnResume()
     {
-        Debug.Log("Resume");
-        EnableMovement();
+        if (paused)
+        {
+            Debug.Log("Resume FPS");
+            canMove = true;
+            paused = false;
+            inputs.SwitchCurrentActionMap("Main");
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
     }
+
 
 
     private void Start()
@@ -105,14 +122,6 @@ public class FPSController : MonoBehaviour
         cam.transform.localRotation = Quaternion.Euler(xRotation, 0, 0);
 
         transform.Rotate(Vector3.up * (lookPos.x * Time.deltaTime) * xSens);
-    }
-
-    public void DisableMovement()
-    {
-        canMove = false;
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-        
     }
 
     public void EnableMovement()
