@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7733845441669351247}
+  - component: {fileID: 695666043127913175}
   m_Layer: 0
   m_Name: DistortionReticle
   m_TagString: Untagged
@@ -38,6 +39,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 15, y: 15}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &695666043127913175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 58368904903950737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 839eaf76a83d9c241bc1a58ea91a7ff9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &278925316479282726
 GameObject:
   m_ObjectHideFlags: 0
@@ -692,7 +705,7 @@ GameObject:
   - component: {fileID: 1687876877664448003}
   - component: {fileID: 7169522362100030886}
   m_Layer: 0
-  m_Name: RedReticle
+  m_Name: NormalReticle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -737,7 +750,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 2100000, guid: e7db2613fed7a124082120a856de576c, type: 2}
+  m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -2162,7 +2175,7 @@ CharacterController:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 3072
+    m_Bits: 7168
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
@@ -2170,7 +2183,7 @@ CharacterController:
   serializedVersion: 3
   m_Height: 2
   m_Radius: 0.5
-  m_SlopeLimit: 35
+  m_SlopeLimit: 40
   m_StepOffset: 0.3
   m_SkinWidth: 0.01
   m_MinMoveDistance: 0.001
@@ -2382,7 +2395,7 @@ MonoBehaviour:
   inputs: {fileID: 7652949364469300864}
   fpsInput: {fileID: -944628639613478452, guid: f6967dfe12088434b8df6d585aa3da79,
     type: 3}
-  speed: 5
+  speed: 6
   grounded: 0
   gravity: -9.8
   jumpForce: 1
@@ -2405,7 +2418,7 @@ MonoBehaviour:
   projectile: {fileID: 7498794356026434984, guid: efc133f40f911814c9b08c214573cd39,
     type: 3}
   launchLocation: {fileID: 8287477093421051793}
-  shootVelocity: 15
+  shootVelocity: 20
   cam: {fileID: 4413430703035792310}
   coolDown: 1
   shootEnabled: 1
