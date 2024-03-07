@@ -30,7 +30,7 @@ Shader "Custom/Stencil Decal"
 		{
 			Tags
 			{
-				"Queue" = "Geometry+1"
+				"Queue" = "Transparent+1"
 			}
 			CGINCLUDE
 			#include "UnityCG.cginc"

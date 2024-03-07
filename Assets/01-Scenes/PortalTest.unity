@@ -529,7 +529,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &755739983
 Transform:
   m_ObjectHideFlags: 0
@@ -566,7 +566,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: e823cd5b5d27c0f4b8256e7c12ee3e6d, type: 2}
+  - {fileID: 2100000, guid: f53f3a3078db3cd4a9bcd875d3b2a557, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -587,7 +587,7 @@ ParticleSystemRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_RenderMode: 0
+  m_RenderMode: 4
   m_MeshDistribution: 0
   m_SortMode: 0
   m_MinParticleSize: 0
@@ -610,7 +610,7 @@ ParticleSystemRenderer:
   m_VertexStreams: 00010304
   m_UseCustomTrailVertexStreams: 0
   m_TrailVertexStreams: 00010304
-  m_Mesh: {fileID: 0}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
   m_Mesh1: {fileID: 0}
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
@@ -5401,8 +5401,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1098380794}
   - component: {fileID: 1098380797}
-  - component: {fileID: 1098380796}
   - component: {fileID: 1098380795}
+  - component: {fileID: 1098380798}
   m_Layer: 0
   m_Name: SussyCamera
   m_TagString: Untagged
@@ -5469,14 +5469,6 @@ MonoBehaviour:
     mipBias: 0
     varianceClampScale: 0.9
     contrastAdaptiveSharpening: 0
---- !u!81 &1098380796
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1098380793}
-  m_Enabled: 1
 --- !u!20 &1098380797
 Camera:
   m_ObjectHideFlags: 0
@@ -5513,7 +5505,7 @@ Camera:
   field of view: 60
   orthographic: 0
   orthographic size: 5
-  m_Depth: -1
+  m_Depth: -2
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 27703
@@ -5528,6 +5520,22 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &1098380798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1098380793}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbdbac96460984747aef77ad8f5e2449, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  thisCam: {fileID: 1098380797}
+  mainCam: {fileID: 330585545}
+  thisCamMaterial: {fileID: 2100000, guid: 1cf6eb271dae1f649ba786c126b67cd4, type: 2}
+  test: {fileID: 8400000, guid: e1fca188945def94297a523c6028cc35, type: 2}
 --- !u!1 &1228215538
 GameObject:
   m_ObjectHideFlags: 0
@@ -5671,7 +5679,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2d37d3f5d72d4c14c9e8be0a97cb907e, type: 2}
+  - {fileID: 2100000, guid: 31bf94a71a52adb4f84ef40356426dbb, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5710,8 +5718,8 @@ Transform:
   m_GameObject: {fileID: 1399930533}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.68096066, y: 0.040790223, z: 0.68096066}
+  m_LocalPosition: {x: 0, y: 0, z: 0.253}
+  m_LocalScale: {x: 0.054995064, y: 0.003294259, z: 0.054995064}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1667663437}

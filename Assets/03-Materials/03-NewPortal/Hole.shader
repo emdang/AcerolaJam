@@ -7,7 +7,7 @@ Shader "Unlit/Hole"
     }
         SubShader
     {
-      Tags { "RenderType" = "Opaque" "Queue" = "Geometry+2"}
+      Tags { "RenderType" = "Opaque" "Queue" = "Transparent+2"}
         ColorMask RGB
 
               ZTest off
