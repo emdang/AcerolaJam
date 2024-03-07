@@ -5,6 +5,8 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     bool hitPortal = false;
+    float hitPortalStart = -1;
+    float lifeTime = 5f;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +27,7 @@ public class Projectile : MonoBehaviour
             Debug.Log("we in");
             hitPortal = true;
             this.gameObject.layer = 11;
+
         }
         if(other.tag == "End")
         {
