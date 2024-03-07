@@ -403,7 +403,7 @@ GameObject:
   - component: {fileID: 6680521662917164764}
   - component: {fileID: 5526404803927741489}
   - component: {fileID: 7223457488863964757}
-  m_Layer: 13
+  m_Layer: 0
   m_Name: Quad (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -453,7 +453,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: ae66c68f89a38df4bb2f4065155ce75e, type: 2}
+  - {fileID: 2100000, guid: 1cf6eb271dae1f649ba786c126b67cd4, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
