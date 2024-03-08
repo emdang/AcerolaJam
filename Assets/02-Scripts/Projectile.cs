@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    bool hitPortal = false;
+    [SerializeField] bool hitPortal = false;
     float hitPortalStart = -1;
     float lifeTime = 5f;
+    Vector3 impactPoint;
+    float endPointDistance;
+    [SerializeField] LayerMask newLayers;
+    bool paused = false;
 
     // Start is called before the first frame update
     void Start()
@@ -17,7 +21,20 @@ public class Projectile : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (hitPortal)
+        {
+            if (!paused)
+            {
+                float lerpValue = Vector3.Distance(impactPoint, this.transform.position) / endPointDistance;
 
+                this.transform.localScale = new Vector3(lerpValue, lerpValue, lerpValue);
+            }
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log(collision.collider.gameObject.name+" "+collision.collider);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -26,16 +43,19 @@ public class Projectile : MonoBehaviour
         {
             Debug.Log("we in");
             hitPortal = true;
-            this.gameObject.layer = 11;
-
+            //this.gameObject.layer = 11;
+            GetComponent<Collider>().excludeLayers = newLayers;
+            impactPoint = this.transform.position;
+            endPointDistance = other.GetComponent<PortalOpening>().GetEndDistance(); 
         }
         if(other.tag == "End")
         {
             if (!hitPortal)
                 return;
             Debug.Log("esplode");
-            Destroy(other.gameObject);
-            Destroy(this.gameObject);
+            this.gameObject.transform.parent = other.gameObject.transform;
+            other.gameObject.SendMessageUpwards("KYS");
+            //Destroy(this.gameObject);
         }
     }
 

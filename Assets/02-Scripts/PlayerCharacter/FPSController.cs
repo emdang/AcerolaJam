@@ -29,7 +29,7 @@ public class FPSController : MonoBehaviour
     bool paused = false;
     public void OnMove(InputValue value)
     {
-        Debug.Log("Moving" + value);
+        //Debug.Log("Moving" + value);
         moveInput = value.Get<Vector2>();
     }
 

@@ -6,9 +6,11 @@ using UnityEngine.InputSystem;
 public class GameManager : MonoBehaviour
 {
 
-    //[SerializeField] InputAction inputAction;
+    //[SerializeField] GameData data;
     public void QuitGame()
     {
         Application.Quit();
     }
+
+    
 }

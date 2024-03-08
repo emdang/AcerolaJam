@@ -20,6 +20,7 @@ public class MenuManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale = 1;
         distortReticle.SetActive(false);
         normalReticle.SetActive(true);
         PauseMenu.SetActive(false);
@@ -36,6 +37,7 @@ public class MenuManager : MonoBehaviour
     {
         if (!paused)
         {
+            Time.timeScale = 0;
             PauseMenu.SetActive(true);
             inputs.SwitchCurrentActionMap("UI");
             Cursor.lockState = CursorLockMode.None;
@@ -45,6 +47,7 @@ public class MenuManager : MonoBehaviour
     public void OnResume()
     {
         Debug.Log("Resume menu");
+        Time.timeScale = 1;
         PauseMenu.SetActive(false);
         SettingsMenu.SetActive(false);
         inputs.SwitchCurrentActionMap("Main");

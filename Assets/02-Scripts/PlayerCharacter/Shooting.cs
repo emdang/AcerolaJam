@@ -26,7 +26,10 @@ public class Shooting : MonoBehaviour
     void Update()
     {
         if (shootEnabled)
-            cooling -= Time.deltaTime;
+        {
+            if(cooling > -1)
+                cooling -= Time.deltaTime;
+        }
     }
 
     public void OnFire()
@@ -50,7 +53,7 @@ public class Shooting : MonoBehaviour
 
     public void OnResume()
     {
-        Debug.Log("Resme Shooting");
+        //Debug.Log("Resme Shooting");
     }
 
     public void DisableShooting()
