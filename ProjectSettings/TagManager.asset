@@ -8,6 +8,8 @@ TagManager:
   - Terrain
   - Opening
   - End
+  - Portal
+  - SpawnZone
   layers:
   - Default
   - TransparentFX

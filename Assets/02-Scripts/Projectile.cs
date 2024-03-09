@@ -43,7 +43,7 @@ public class Projectile : MonoBehaviour
         {
             Debug.Log("we in");
             hitPortal = true;
-            //this.gameObject.layer = 11;
+            //this.gameObject.layer = 10;
             GetComponent<Collider>().excludeLayers = newLayers;
             impactPoint = this.transform.position;
             endPointDistance = other.GetComponent<PortalOpening>().GetEndDistance(); 
