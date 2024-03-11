@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PortalSpawner : MonoBehaviour
 {
+    [SerializeField] GameData data;
     [SerializeField] List<BoxCollider> spawnZones;
     [SerializeField] List<float> weights;
     [SerializeField] float portalMargin;
@@ -107,6 +108,7 @@ public class PortalSpawner : MonoBehaviour
             }
             Instantiate(portalPrefab, xyz, Quaternion.Euler(Random.Range(25f, 25f), Random.Range(-180f, 180f), Random.Range(-25, 25)));
         }
+        data.portalsCreated += amount;
     }
 
     Vector3 ChooseCoordinates(BoxCollider zone)

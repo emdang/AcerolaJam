@@ -5772,6 +5772,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   endPoint: {fileID: 8684258654156861746}
+  data: {fileID: 11400000, guid: 146cfc59aeabfff4b8f0a2dab5b80d78, type: 2}
+  kysButton: 0
 --- !u!1 &8546735688221050173
 GameObject:
   m_ObjectHideFlags: 0
