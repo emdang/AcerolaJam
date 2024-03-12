@@ -9,6 +9,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameData data;
     [SerializeField] float startTime;
     [SerializeField] PlayerInput inputs;
+    [SerializeField] GameObject gameOverClip;
+    bool gameOver = false;
 
     private void Start()
     {
@@ -19,12 +21,16 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (data.timeLeft <= 0)//out of time
+        if (!gameOver)
         {
-            GameOver();
-            return;
+            if (data.timeLeft <= 1)//out of time
+            {
+                GameOver();
+                gameOver = true;
+                return;
+            }
+            DecreaseTime(Time.deltaTime);
         }
-        DecreaseTime(Time.deltaTime);
     }
     public void DecreaseTime(float amount)
     {
@@ -59,5 +65,6 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         BroadcastMessage("OnGameOver");
+        Instantiate(gameOverClip);
     }
 }

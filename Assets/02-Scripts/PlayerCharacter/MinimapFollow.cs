@@ -33,14 +33,14 @@ public class FollowTransform : MonoBehaviour
         // calculate distance
         Vector2 this2D = new Vector2(transform.position.x, transform.position.z);
         Vector2 target2D = new Vector2(targetTransform.position.x, targetTransform.position.z);
-        float Distance = Vector2.Distance(this2D, target2D);
+        float distance = Vector2.Distance(this2D, target2D);
 
         //clamp to bounds
-        if (Distance > mapBounds)
+        if (distance > mapBounds)
         {
             sprite.color = Color.yellow;
             Vector2 fromOriginToObject = this2D - target2D;
-            fromOriginToObject *= mapBounds / Distance;
+            fromOriginToObject *= mapBounds / distance;
             transform.position = new Vector3 ((target2D + fromOriginToObject).x,transform.position.y, (target2D + fromOriginToObject).y);
         }
     }

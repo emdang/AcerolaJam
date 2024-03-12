@@ -16,7 +16,7 @@ public class MenuManager : MonoBehaviour
     [SerializeField] GameObject PauseMenu;
     [SerializeField] GameObject SettingsMenu;
     [SerializeField] GameObject GameOverMenu;
-    [SerializeField] GameObject GameOverStats;
+    [SerializeField] GameObject Credits;
 
     bool paused = false;
 
@@ -70,15 +70,15 @@ public class MenuManager : MonoBehaviour
         Cursor.visible = true;
     }
 
-    public void OnSeeStats()
+    public void OnOpenCredits()
     {
         GameOverMenu.SetActive(false);
-        GameOverStats.SetActive(true);
+        Credits.SetActive(true);
     }
 
     public void OnReturnToGameOver()
     {
         GameOverMenu.SetActive(true);
-        GameOverStats.SetActive(false);
+        Credits.SetActive(false);
     }
 }

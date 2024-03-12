@@ -8,6 +8,7 @@ public class PortalOpening : MonoBehaviour
     [SerializeField] GameData data;
     [SerializeField] bool kysButton = false;
     [SerializeField] float timeAdd = 7f;
+    [SerializeField] GameObject destroySFX;
 
     private void Update()
     {
@@ -27,6 +28,7 @@ public class PortalOpening : MonoBehaviour
     {
         data.portalsDestroyed++;
         data.timeLeft += timeAdd;
+        Instantiate(destroySFX);
         Destroy(this.gameObject.transform.parent.gameObject.transform.parent.gameObject);//crying
     }
 

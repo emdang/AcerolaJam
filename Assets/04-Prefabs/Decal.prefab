@@ -6032,7 +6032,9 @@ MonoBehaviour:
   endPoint: {fileID: 8684258654156861746}
   data: {fileID: 11400000, guid: 146cfc59aeabfff4b8f0a2dab5b80d78, type: 2}
   kysButton: 0
-  timeAdd: 3
+  timeAdd: 5
+  destroySFX: {fileID: 5422443484709947683, guid: 277ae284beece5e42960a9eb890c5c9e,
+    type: 3}
 --- !u!1 &8546735688221050173
 GameObject:
   m_ObjectHideFlags: 0
