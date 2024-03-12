@@ -26,7 +26,7 @@ public class PortalOpening : MonoBehaviour
     {
         data.portalsDestroyed++;
         data.timeLeft += timeAdd;
-        Destroy(this.gameObject.transform.parent.gameObject);
+        Destroy(this.gameObject.transform.parent.gameObject.transform.parent.gameObject);
     }
 
 

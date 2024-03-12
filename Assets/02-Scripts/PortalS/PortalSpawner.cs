@@ -14,6 +14,7 @@ public class PortalSpawner : MonoBehaviour
     [SerializeField] int startBurstNumber = 10;
     [SerializeField] GameObject portalPrefab;
     [SerializeField] bool spawn = false;
+    float lastSpawnTime;
 
     //have bounds for spawn areas, maybe cubes? - list
     //random rate of spawn - time frequency based? and capped by a max?
