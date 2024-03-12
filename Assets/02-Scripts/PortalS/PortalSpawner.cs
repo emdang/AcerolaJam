@@ -9,7 +9,8 @@ public class PortalSpawner : MonoBehaviour
     [SerializeField] List<float> weights;
     [SerializeField] float portalMargin;
     [SerializeField] float terrainMargin;
-    [SerializeField] float spawnFrequency;
+    [SerializeField] float spawnTimeMin = 2.5f;
+    [SerializeField] float spawnTimeMax = 7.5f;
     [SerializeField] int spawnBurstNumber = 1;
     [SerializeField] int startBurstNumber = 10;
     [SerializeField] GameObject portalPrefab;
@@ -110,6 +111,7 @@ public class PortalSpawner : MonoBehaviour
             Instantiate(portalPrefab, xyz, Quaternion.Euler(Random.Range(25f, 25f), Random.Range(-180f, 180f), Random.Range(-25, 25)));
         }
         data.portalsCreated += amount;
+        lastSpawnTime = Time.time;
     }
 
     Vector3 ChooseCoordinates(BoxCollider zone)

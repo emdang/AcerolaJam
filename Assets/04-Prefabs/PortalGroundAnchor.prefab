@@ -224,6 +224,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetTransform: {fileID: 0}
   mapBounds: 16.5
+  defaultMaterial: {fileID: 0}
+  distanceMaterial: {fileID: 0}
+  sprite: {fileID: 5672440576128917904}
 --- !u!1 &4002696637947420012
 GameObject:
   m_ObjectHideFlags: 0
@@ -265,60 +268,15 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5561204905200217436}
     m_Modifications:
-    - target: {fileID: 49264988357108896, guid: b7486fe45106c8d488d37d91e481de2e,
+    - target: {fileID: 2094876799441208258, guid: b7486fe45106c8d488d37d91e481de2e,
         type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 161276561369448461, guid: b7486fe45106c8d488d37d91e481de2e,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 188118425212008826, guid: b7486fe45106c8d488d37d91e481de2e,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 347354083473556003, guid: b7486fe45106c8d488d37d91e481de2e,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 932285031442698391, guid: b7486fe45106c8d488d37d91e481de2e,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1025347017410576293, guid: b7486fe45106c8d488d37d91e481de2e,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2624488811651862867, guid: b7486fe45106c8d488d37d91e481de2e,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2666357483484631112, guid: b7486fe45106c8d488d37d91e481de2e,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
+      propertyPath: m_Name
+      value: StaticNoise
       objectReference: {fileID: 0}
     - target: {fileID: 3114436355739722156, guid: b7486fe45106c8d488d37d91e481de2e,
         type: 3}
       propertyPath: m_Name
       value: Decal
-      objectReference: {fileID: 0}
-    - target: {fileID: 3114436355739722156, guid: b7486fe45106c8d488d37d91e481de2e,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3272724822012681629, guid: b7486fe45106c8d488d37d91e481de2e,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3422473360999625735, guid: b7486fe45106c8d488d37d91e481de2e,
         type: 3}
@@ -370,45 +328,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3604640293367406188, guid: b7486fe45106c8d488d37d91e481de2e,
+    - target: {fileID: 7211875384863824408, guid: b7486fe45106c8d488d37d91e481de2e,
         type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4861859152617269917, guid: b7486fe45106c8d488d37d91e481de2e,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5722788177171484500, guid: b7486fe45106c8d488d37d91e481de2e,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5887692479705145714, guid: b7486fe45106c8d488d37d91e481de2e,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6503197157389536927, guid: b7486fe45106c8d488d37d91e481de2e,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7208309768383364762, guid: b7486fe45106c8d488d37d91e481de2e,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8546735688221050173, guid: b7486fe45106c8d488d37d91e481de2e,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8967012174519109069, guid: b7486fe45106c8d488d37d91e481de2e,
-        type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 0
+      propertyPath: timeAdd
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

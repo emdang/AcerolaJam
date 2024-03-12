@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 { 
     [SerializeField] GameData data;
     [SerializeField] float startTime;
+    [SerializeField] PlayerInput inputs;
 
     private void Start()
     {
@@ -32,6 +34,13 @@ public class GameManager : MonoBehaviour
     {
         data.timeLeft += amount;
     }
+
+    public void RestartGame()
+    {
+        Time.timeScale = 1;
+        inputs.SwitchCurrentActionMap("Main");
+        SceneManager.LoadScene(0);
+    }
     public void QuitGame()
     {
         Application.Quit();
@@ -49,6 +58,6 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-
+        BroadcastMessage("OnGameOver");
     }
 }

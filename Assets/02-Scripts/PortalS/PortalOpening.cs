@@ -7,10 +7,11 @@ public class PortalOpening : MonoBehaviour
     [SerializeField] Transform endPoint;
     [SerializeField] GameData data;
     [SerializeField] bool kysButton = false;
-    [SerializeField] float timeAdd = 15f;
+    [SerializeField] float timeAdd = 7f;
 
     private void Update()
     {
+        //for debugging
         if (kysButton)
         {
             KYS();
@@ -26,7 +27,7 @@ public class PortalOpening : MonoBehaviour
     {
         data.portalsDestroyed++;
         data.timeLeft += timeAdd;
-        Destroy(this.gameObject.transform.parent.gameObject.transform.parent.gameObject);
+        Destroy(this.gameObject.transform.parent.gameObject.transform.parent.gameObject);//crying
     }
 
 

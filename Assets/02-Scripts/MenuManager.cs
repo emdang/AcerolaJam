@@ -12,8 +12,11 @@ public class MenuManager : MonoBehaviour
     [SerializeField] GameObject normalReticle;
     [SerializeField] GameObject distortReticle;
 
+    [SerializeField] GameObject PlayerViewUI;
     [SerializeField] GameObject PauseMenu;
     [SerializeField] GameObject SettingsMenu;
+    [SerializeField] GameObject GameOverMenu;
+    [SerializeField] GameObject GameOverStats;
 
     bool paused = false;
 
@@ -38,6 +41,7 @@ public class MenuManager : MonoBehaviour
         if (!paused)
         {
             Time.timeScale = 0;
+            PlayerViewUI.SetActive(false);
             PauseMenu.SetActive(true);
             inputs.SwitchCurrentActionMap("UI");
             Cursor.lockState = CursorLockMode.None;
@@ -54,5 +58,27 @@ public class MenuManager : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         paused = false;
+        PlayerViewUI.SetActive(true);
+    }
+    public void OnGameOver()
+    {
+        Time.timeScale = 0f;
+        PlayerViewUI.SetActive(false);
+        GameOverMenu.SetActive(true);
+        inputs.SwitchCurrentActionMap("UI");
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
+    public void OnSeeStats()
+    {
+        GameOverMenu.SetActive(false);
+        GameOverStats.SetActive(true);
+    }
+
+    public void OnReturnToGameOver()
+    {
+        GameOverMenu.SetActive(true);
+        GameOverStats.SetActive(false);
     }
 }
