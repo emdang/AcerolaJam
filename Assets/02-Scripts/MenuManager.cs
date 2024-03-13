@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class MenuManager : MonoBehaviour
 {
@@ -17,6 +18,8 @@ public class MenuManager : MonoBehaviour
     [SerializeField] GameObject SettingsMenu;
     [SerializeField] GameObject GameOverMenu;
     [SerializeField] GameObject Credits;
+    [SerializeField] TMP_Text score;
+    [SerializeField] GameData data;
 
     bool paused = false;
 
@@ -65,6 +68,7 @@ public class MenuManager : MonoBehaviour
         Time.timeScale = 0f;
         PlayerViewUI.SetActive(false);
         GameOverMenu.SetActive(true);
+        score.text = "Time: "+ Time.time.ToString("#.00")+"sec | Portals fed: "+data.portalsDestroyed+"/"+data.portalsCreated;
         inputs.SwitchCurrentActionMap("UI");
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;

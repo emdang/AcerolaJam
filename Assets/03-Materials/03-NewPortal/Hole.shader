@@ -4,6 +4,7 @@ Shader "Unlit/Hole"
     {
    [HDR] _Color("Color",Color) = (1,1,1,0.5)
         _MainTex("Texture", 2D) = "white" {}
+        _TwistSpeed("Twist Speed",float) = 7
     }
         SubShader
     {
@@ -52,6 +53,36 @@ Shader "Unlit/Hole"
             float4 _MainTex_ST;
             float4 _Color;
 
+            void Unity_Rotate_Radians_float(float2 UV, float2 Center, float Rotation, out float2 Out)
+            {
+                //rotation matrix
+                UV -= Center;
+                float s = sin(Rotation);
+                float c = cos(Rotation);
+
+                //center rotation matrix
+                float2x2 rMatrix = float2x2(c, -s, s, c);
+                rMatrix *= 0.5;
+                rMatrix += 0.5;
+                rMatrix = rMatrix * 2 - 1;
+
+                //multiply the UVs by the rotation matrix
+                UV.xy = mul(UV.xy, rMatrix);
+                UV += Center;
+
+                Out = UV;
+            }
+
+            void Unity_Twirl_float(float2 UV, float2 Center, float Strength, float2 Offset, out float2 Out)
+            {
+                float2 delta = UV - Center;
+                float angle = Strength * length(delta);
+                float x = cos(angle) * delta.x - sin(angle) * delta.y;
+                float y = sin(angle) * delta.x + cos(angle) * delta.y;
+                Out = float2(x + Center.x + Offset.x, y + Center.y + Offset.y);
+            }
+
+
             v2f vert(appdata v)
             {
                 v2f o;
@@ -64,7 +95,10 @@ Shader "Unlit/Hole"
             fixed4 frag(v2f i) : SV_Target
             {
                 // sample the texture
-                fixed4 col = tex2D(_MainTex, i.uv);
+                float2 twistUV;
+                Unity_Rotate_Radians_float(i.uv, float2(0.5,0.f), _Time.x*7.0, twistUV);
+                Unity_Twirl_float(twistUV, float2(0.5, 0.5), 10, 0, twistUV);
+                fixed4 col = tex2D(_MainTex, twistUV);
                 // apply fog
                 UNITY_APPLY_FOG(i.fogCoord, col);
                 return col * _Color;

@@ -9,7 +9,12 @@ public class PortalOpening : MonoBehaviour
     [SerializeField] bool kysButton = false;
     [SerializeField] float timeAdd = 7f;
     [SerializeField] GameObject destroySFX;
+    float timeAddStart;
 
+    private void Start()
+    {
+        timeAddStart = timeAdd;
+    }
     private void Update()
     {
         //for debugging
@@ -17,6 +22,8 @@ public class PortalOpening : MonoBehaviour
         {
             KYS();
         }
+        if(timeAdd>.75f)
+            timeAdd = timeAddStart - (Time.time / 30);
     }
     public float GetEndDistance()
     {

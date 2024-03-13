@@ -5,18 +5,20 @@ using UnityEngine;
 public class PortalSpawner : MonoBehaviour
 {
     [SerializeField] GameData data;
+
     [SerializeField] List<BoxCollider> spawnZones;
     [SerializeField] List<float> weights;
     [SerializeField] float portalMargin;
     [SerializeField] float terrainMargin;
-    [SerializeField] float spawnTimeMin = 2.5f;
-    [SerializeField] float spawnTimeMax = 7.5f;
+
+    [SerializeField] float spawnTimeMin = 2f;
+    [SerializeField] float spawnTimeMax = 4f;
     [SerializeField] int spawnBurstNumber = 1;
     [SerializeField] int startBurstNumber = 10;
     [SerializeField] GameObject portalPrefab;
     [SerializeField] bool spawn = false;
-    float lastSpawnTime;
-
+    float nextSpawnTime=0f;
+    [SerializeField] float totalTime;
     //have bounds for spawn areas, maybe cubes? - list
     //random rate of spawn - time frequency based? and capped by a max?
     //burst spawn at the beginning of the level, maybe in a certain area
@@ -41,6 +43,7 @@ public class PortalSpawner : MonoBehaviour
         }
         CalculateWeights();
         SpawnPortal(startBurstNumber);
+        nextSpawnTime = Random.Range(spawnTimeMin, spawnTimeMax);
     }
 
     public void FixedUpdate()
@@ -50,6 +53,13 @@ public class PortalSpawner : MonoBehaviour
             spawn = false;
             SpawnPortal(spawnBurstNumber);
         }
+        if(Time.time >= nextSpawnTime)
+        {
+            nextSpawnTime += Random.Range(spawnTimeMin, spawnTimeMax);
+            SpawnPortal(Mathf.FloorToInt(Random.Range(1,spawnBurstNumber)));
+        }
+        spawnBurstNumber = Mathf.FloorToInt(Time.time / 30);
+        totalTime = Time.time;
     }
     void CalculateWeights()
     {
@@ -111,7 +121,6 @@ public class PortalSpawner : MonoBehaviour
             Instantiate(portalPrefab, xyz, Quaternion.Euler(Random.Range(25f, 25f), Random.Range(-180f, 180f), Random.Range(-25, 25)));
         }
         data.portalsCreated += amount;
-        lastSpawnTime = Time.time;
     }
 
     Vector3 ChooseCoordinates(BoxCollider zone)
