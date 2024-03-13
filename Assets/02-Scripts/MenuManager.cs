@@ -65,13 +65,19 @@ public class MenuManager : MonoBehaviour
     }
     public void OnGameOver()
     {
-        Time.timeScale = 0f;
-        PlayerViewUI.SetActive(false);
-        GameOverMenu.SetActive(true);
-        score.text = "Time: "+ Time.time.ToString("#.00")+"sec | Portals fed: "+data.portalsDestroyed+"/"+data.portalsCreated;
+        score.text = "Time: "+ Time.timeSinceLevelLoad.ToString("#.00")+"sec | Portals fed: "+data.portalsDestroyed+"/"+data.portalsCreated;
         inputs.SwitchCurrentActionMap("UI");
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+        StartCoroutine(GameOverDelay(2f));
+    }
+
+    IEnumerator GameOverDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        PlayerViewUI.SetActive(false);
+        GameOverMenu.SetActive(true);
+        Time.timeScale = 0f;
     }
 
     public void OnOpenCredits()

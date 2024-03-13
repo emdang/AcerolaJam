@@ -11,9 +11,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] PlayerInput inputs;
     [SerializeField] GameObject gameOverClip;
     bool gameOver = false;
+    [SerializeField] Animator motherAnimator;
 
     private void Start()
     {
+        data.gameOver = false;
         data.portalsCreated = 0;
         data.portalsDestroyed = 0;
         data.timeLeft = startTime;
@@ -66,5 +68,7 @@ public class GameManager : MonoBehaviour
     {
         BroadcastMessage("OnGameOver");
         Instantiate(gameOverClip);
+        motherAnimator.SetTrigger("GameOver");
+        data.gameOver = true;
     }
 }

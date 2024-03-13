@@ -592,6 +592,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3422473360999625735}
   - component: {fileID: 7625260414523994533}
+  - component: {fileID: 6347744388292741401}
   m_Layer: 12
   m_Name: Decal
   m_TagString: Portal
@@ -637,6 +638,27 @@ MonoBehaviour:
   textureName: _MainTex
   color: {r: 2.2839437, g: 0, b: 3.888797, a: 1}
   colorName: _Tint
+--- !u!95 &6347744388292741401
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3114436355739722156}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c208bbc6de0f31c4ea2605061e2ce24b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 2
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3272724822012681629
 GameObject:
   m_ObjectHideFlags: 0

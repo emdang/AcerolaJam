@@ -53,13 +53,13 @@ public class PortalSpawner : MonoBehaviour
             spawn = false;
             SpawnPortal(spawnBurstNumber);
         }
-        if(Time.time >= nextSpawnTime)
+        if(Time.timeSinceLevelLoad >= nextSpawnTime)
         {
             nextSpawnTime += Random.Range(spawnTimeMin, spawnTimeMax);
             SpawnPortal(Mathf.FloorToInt(Random.Range(1,spawnBurstNumber)));
         }
-        spawnBurstNumber = Mathf.FloorToInt(Time.time / 30);
-        totalTime = Time.time;
+        spawnBurstNumber = Mathf.FloorToInt(Time.timeSinceLevelLoad / 30);
+        totalTime = Time.timeSinceLevelLoad;
     }
     void CalculateWeights()
     {

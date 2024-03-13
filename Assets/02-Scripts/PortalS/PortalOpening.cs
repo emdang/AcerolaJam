@@ -17,13 +17,17 @@ public class PortalOpening : MonoBehaviour
     }
     private void Update()
     {
+        if (data.gameOver)
+        {
+            this.gameObject.transform.parent.gameObject.GetComponent<Animator>().SetTrigger("Destroy");
+        }
         //for debugging
         if (kysButton)
         {
             KYS();
         }
         if(timeAdd>.75f)
-            timeAdd = timeAddStart - (Time.time / 30);
+            timeAdd = timeAddStart - (Time.timeSinceLevelLoad / 30);
     }
     public float GetEndDistance()
     {
@@ -38,6 +42,4 @@ public class PortalOpening : MonoBehaviour
         Instantiate(destroySFX);
         Destroy(this.gameObject.transform.parent.gameObject.transform.parent.gameObject);//crying
     }
-
-
 }

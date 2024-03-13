@@ -8,4 +8,5 @@ public class GameData : ScriptableObject
     public float timeLeft;
     public int portalsCreated;
     public int portalsDestroyed;
+    public bool gameOver;
 }
