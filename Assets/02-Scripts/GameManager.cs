@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
     bool gameOver = false;
     [SerializeField] Animator motherAnimator;
 
-    private void Start()
+    private void Awake()
     {
         data.gameOver = false;
         data.portalsCreated = 0;
